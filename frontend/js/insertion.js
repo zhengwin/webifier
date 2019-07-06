@@ -1,3 +1,5 @@
+import { Paragraph } from './Paragraph.js';
+
 /*  Inserts a HTML tag (elementType) into the main canvas. 
     elementType parameter must be a valid HTML element tag.
 */
@@ -5,40 +7,33 @@ function insertElement(elementType) {
 
     const mainCanvas = document.querySelector('#main-canvas')
 
-    const newElement = createElement(elementType)
+    const newElement = createElement(elementType);
+    console.log(newElement);
 
-    if (typeof insertElement.counter == 'undefined') {
-        insertElement.counter = 0
-    } else {
-        insertElement.counter += 1
-    }
+    // if (typeof insertElement.counter == 'undefined') {
+    //     insertElement.counter = 0
+    // } else {
+    //     insertElement.counter += 1
+    // }
 
-    newElement.id = `element${insertElement.counter}`
+    // newElement.id = `element${insertElement.counter}`
 
     mainCanvas.appendChild(newElement)
 
-    const temp = new Element(document.querySelector(`#${newElement.id}`))
+    // const temp = new Element(document.querySelector(`#${newElement.id}`))
     
 }
 
 function createElement(elementType) {
     switch(elementType) {
         case 'paragraph':
-            const textToAdd = prompt("Please enter the text that will be displayed.")
-            const newParagraphElement = document.createElement('p')
-            newParagraphElement.innerHTML = textToAdd
-            return newParagraphElement
+            let p = new Paragraph();
+            return p.newParagraphElement;
         default:
             return document.createElement(elementType)
     }
 }
 
-class Paragraph extends Element{
-    constructor(){
-
-    }
-
-
-}
+export { createElement, insertElement };
 
 

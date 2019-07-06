@@ -1,4 +1,5 @@
 import { Element, builderApp } from './Element.js';
+import { createElement, insertElement } from './insertion.js';    
 
 document.addEventListener("DOMContentLoaded", main);
 
@@ -12,8 +13,8 @@ function main() {
   let resizeBtn = document.querySelector('#resize-element-button').children[0];
   resizeBtn.addEventListener("click", toolBox.enableResize);
 
-//     const insertParagraphButton = document.querySelector("#insert-paragraph-dropdown-item");
-//     insertParagraphButton.addEventListener('click', function(){ insertElement('paragraph')});
+    const insertParagraphButton = document.querySelector("#insert-paragraph-dropdown-item");
+    insertParagraphButton.addEventListener('click', function(){ insertElement('paragraph')});
 
 //     const insertImageButton = document.querySelector("#insert-image-dropdown-item");
 //     insertImageButton.addEventListener('click', insertImage('image'));
