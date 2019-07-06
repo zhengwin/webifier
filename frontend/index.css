@@ -43,3 +43,11 @@ body {
     border-radius:10%;
 }
 
+#bootstrap-override #drop-down-button {
+  margin-right: 2em;
+}
+
+#bootstrap-override #drag-element-button {
+  margin-right: 1em;
+}
+
