@@ -1,4 +1,4 @@
-builderApp = {
+let builderApp = {
     activeElements: [],
   }
 
@@ -63,4 +63,4 @@ class Element {
     }
   }
 
-module.exports = { Element, builderApp };
+export { Element, builderApp };

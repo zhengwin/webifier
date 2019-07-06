@@ -1,19 +1,16 @@
-const { Element, builderApp } = require('./Element')
+import { Element, builderApp } from './Element.js';
 
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
+  // Make the DIV element draggable:
+  let resizeTest =  new Element(document.querySelector("#resize-test2"));
 
-  let newElement = new Element();
-
-    // Make the DIV element draggable:
-    resizeTest =  new Element(document.querySelector("#resize-test2"));
-
-    // Toolbox
-    dragBtn = document.querySelector('#drag-element-button').children[0];
-    dragBtn.addEventListener("click", toolBox.enableDrag);
-    resizeBtn = document.querySelector('#resize-element-button').children[0];
-    resizeBtn.addEventListener("click", toolBox.enableResize);
+  // Toolbox
+  let dragBtn = document.querySelector('#drag-element-button').children[0];
+  dragBtn.addEventListener("click", toolBox.enableDrag);
+  let resizeBtn = document.querySelector('#resize-element-button').children[0];
+  resizeBtn.addEventListener("click", toolBox.enableResize);
 
 //     const insertParagraphButton = document.querySelector("#insert-paragraph-dropdown-item");
 //     insertParagraphButton.addEventListener('click', function(){ insertElement('paragraph')});
