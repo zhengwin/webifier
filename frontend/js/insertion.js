@@ -23,7 +23,7 @@ function insertElement(elementType) {
 
 function createElement(elementType) {
     switch(elementType) {
-        case 'p':
+        case 'paragraph':
             const textToAdd = prompt("Please enter the text that will be displayed.")
             const newParagraphElement = document.createElement('p')
             newParagraphElement.innerHTML = textToAdd
@@ -32,3 +32,13 @@ function createElement(elementType) {
             return document.createElement(elementType)
     }
 }
+
+class Paragraph extends Element{
+    constructor(){
+
+    }
+
+
+}
+
+
