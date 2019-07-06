@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>website builder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="insertion.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="bootstrap-override">
+
+        <!-- Navigation bar-->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="main-nav-bar">       
+
+            <div class="collapse navbar-collapse">
+                
+                <!-- Logo-->
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">
+                        VeryGoodWebsiteBuilder
+                    </a>
+                </div>
+
+                <!-- Menu Items-->
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item mr-5"><a class="nav-link" href="#">Help</a></li>
+                    <li class="nav-item dropdown my-navbar-button" id="insert-element-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Insert Element</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="insert-paragraph-dropdown-item">Paragraph/Text</a></li>
+                            <li><a class="dropdown-item" href="#">Image</a></li>
+                            <li><a class="dropdown-item" href="#">Hyperlink</a></li>
+                            <li><a class="dropdown-item" href="#">User Input Field</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item my-navbar-button ml-5" id="drag-element-button">
+                        <button class="btn btn-primary">Drag</button>
+                    </li>
+                    <li class="nav-item my-navbar-button ml-2" id="resize-element-button">
+                        <button class="btn btn-primary">Resize</button>
+                    </li>
+                </ul>
+                    
+
+            </div>
+        </nav>
+
+        <div id="main-canvas">
+
+            <div id="resize-test2">
+                <p>Click the button, then drag the bottom right corner to resize this DIV element.</p>
+             </div>
+            <!--
+            <button type="button" class="btn btn-primary" id="add-text-button">Add Text Field</button>
+            -->
+        </div>
+    </div>
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
