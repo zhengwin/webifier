@@ -61,6 +61,7 @@ class Element {
       this.element.removeEventListener("mousedown", this.dragMouseDownHandler);
       this.closeDragElement();
     }
+
   }
 
 export { Element, builderApp };

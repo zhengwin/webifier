@@ -18,7 +18,7 @@ function insertElement(elementType) {
 
     // newElement.id = `element${insertElement.counter}`
 
-    mainCanvas.appendChild(newElement)
+    mainCanvas.appendChild(newElement);
 
     // const temp = new Element(document.querySelector(`#${newElement.id}`))
     

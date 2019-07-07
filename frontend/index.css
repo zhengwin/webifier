@@ -51,3 +51,12 @@ body {
   margin-right: 1em;
 }
 
+#delete-border{
+  border: 3px solid red;
+  background-color: lightblue;
+  width: 270px;
+  /* overflow: auto; */
+  cursor: move;
+  position: absolute;
+}
+
