@@ -5,65 +5,77 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>website builder</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <script type="module" src="./js/index.js"></script>
 </head>
 <body>
-    <div class="container" id="bootstrap-override">
+    <div class="container-fluid" id="bootstrap-override">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav id="nav-bar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Webifier</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-5 mt-2 mt-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Templates</a>
                 </li>
-                <li class="nav-item dropdown" id="drop-down-button">
-                    <a class="nav-link dropdown-toggle" href="#" id="insert-element-dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Insert Element
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#" id="insert-paragraph-dropdown-item">Paragraph</a>
-                        <a class="dropdown-item" href="#" id="insert-image-dropdown-item">Image</a>
-                        <a class="dropdown-item" href="#" id="insert-hyperlink-dropdown-item">Hyper link</a>
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Insert Element
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#" id="insert-paragraph-dropdown-item">Paragraph</a>
+                            <a class="dropdown-item" href="#" id="insert-hyperlink-dropdown-item">Hyper Link</a>
+                            <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+                            <a class="dropdown-item" href="#" id="insert-image-dropdown-item"><label for="file" style="cursor: pointer;">Upload Image</label></a>
+                        </div>
                     </div>
-                </li>
+                    <button type="button" class="btn btn-secondary" id="drag-element-button">Drag</button>
+                    <button type="button" class="btn btn-secondary" id="resize-element-button">Resize</button>
                 
-                <li class="nav-item toolbox" id="drag-element-button">
-                    <button class="btn btn-primary">Drag</button>
-                </li>
-
-                <li class="nav-item toolbox" id="resize-element-button">
-                    <button class="btn btn-primary">Resize</button>
-                </li>
-
-                <li class="nav-item toolbox" id="delete-element-button">
-                    <button class="btn btn-primary">Delete</button>
-                </li>
+                  </div>
                 </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </nav>
 
+        <div class="jumbotron" id="cover">
+            <h1 class="display-4">Welcome to Webifier!</h1>
+            <p class="lead">This is a simple demo, to demonstrate our website building tool</p>
+            <hr class="my-4">
+            <p>Our goal is to help small businesses and non-profits get a website running with minimal effort</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="try-it-out-btn">Try It Out</a>
+        </div>
+
         <div id="main-canvas">
 
-            <div id="resize-test2">
+            <!-- <div id="resize-test2">
                 <p>Click the button, then drag the bottom right corner to resize this DIV element.</p>
-             </div>
+             </div> -->
             <!--
             <button type="button" class="btn btn-primary" id="add-text-button">Add Text Field</button>
             -->
+        
         </div>
+
     </div>
+
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
