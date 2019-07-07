@@ -1,5 +1,5 @@
 import { Element, builderApp } from './Element.js';
-import { createElement, insertElement } from './insertion.js';    
+import { createElement, insertElement } from './insertion.js';  
 
 document.addEventListener("DOMContentLoaded", main);
 
@@ -16,8 +16,8 @@ function main() {
   const insertParagraphButton = document.querySelector("#insert-paragraph-dropdown-item");
   insertParagraphButton.addEventListener('click', function(){ insertElement('paragraph')});
 
-//     const insertImageButton = document.querySelector("#insert-image-dropdown-item");
-//     insertImageButton.addEventListener('click', insertImage('image'));
+  const insertImageButton = document.querySelector("#file");
+  insertImageButton.addEventListener("change", () => { insertElement('image')});
 
 //     const insertImageButton = document.querySelector("#insert-hyperlink-dropdown-item");
 //     insertImageButton.addEventListener('click', insertImage('hyperlink'));

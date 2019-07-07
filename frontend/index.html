@@ -13,7 +13,7 @@
     <div class="container" id="bootstrap-override">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Webifier</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,8 +34,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#" id="insert-paragraph-dropdown-item">Paragraph</a>
-                        <a class="dropdown-item" href="#" id="insert-image-dropdown-item">Image</a>
-                        <a class="dropdown-item" href="#" id="insert-hyperlink-dropdown-item">Hyper link</a>
+                        <a class="dropdown-item" href="#" id="insert-hyperlink-dropdown-item">Hyper Link</a>
+                        <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+                        <a class="dropdown-item" href="#" id="insert-image-dropdown-item"><label for="file" style="cursor: pointer;">Upload Image</label></a>
                     </div>
                 </li>
                 
@@ -58,8 +59,13 @@
             <!--
             <button type="button" class="btn btn-primary" id="add-text-button">Add Text Field</button>
             -->
+            
+            <p></p>
+            <img id="output" width="200" />	
         </div>
+
     </div>
+
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

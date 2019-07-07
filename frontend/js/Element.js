@@ -12,6 +12,7 @@ class Element {
   
         // default settings
         this.element = element;
+        this.element.style.cursor = "move";
         this.element.addEventListener("mousedown", this.dragMouseDownHandler);
         this.element.style.position = "absolute";
         this.positions = {pos1: 0, pos2: 0, pos3: 0, pos4: 0};
