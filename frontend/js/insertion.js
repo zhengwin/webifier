@@ -5,9 +5,8 @@ import { Image } from './Image.js';
     elementType parameter must be a valid HTML element tag.
 */
 function insertElement(elementType) {
-
-    const mainCanvas = document.querySelector('#main-canvas')
-
+    const mainCanvas = document.querySelector('#main-canvas');
+    
     const newElement = createElement(elementType);
     console.log(newElement);
 
@@ -26,6 +25,8 @@ function insertElement(elementType) {
 }
 
 function createElement(elementType) {
+    const mainCanvas = document.querySelector('#main-canvas');
+
     switch(elementType) {
         case 'paragraph':
             let p = new Paragraph();
