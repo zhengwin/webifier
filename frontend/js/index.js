@@ -34,6 +34,8 @@ function main() {
   const insertImageButton = document.querySelector("#file");
   insertImageButton.addEventListener("change", () => { insertElement('image')});
 
+  const insertMediaObjectButton = document.querySelector("#insert-media-object-item");
+  insertMediaObjectButton.addEventListener("click", () => { insertElement('mediaObject')});
 //     const insertImageButton = document.querySelector("#insert-hyperlink-dropdown-item");
 //     insertImageButton.addEventListener('click', insertImage('hyperlink'));
 
@@ -43,7 +45,6 @@ function main() {
 
 let toolBox = {
   enableDrag: () => {
-    console.log("XD");
     let {activeElements} = builderApp;
     activeElements.forEach(element => {
       element.enableDrag();
