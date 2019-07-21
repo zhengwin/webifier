@@ -4,7 +4,7 @@ body {
 
 #bootstrap-override {
   padding: 0;
-  height: 100vh;
+  /* height: 100%; */s
 }
 
 #nav-bar {
