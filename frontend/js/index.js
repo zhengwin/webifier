@@ -4,9 +4,6 @@ import { createElement, insertElement } from './insertion.js';
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
-  // Make the DIV element draggable:
-  
-
   //tryitout button
   let tryItOut = document.querySelector("#try-it-out-btn");
   tryItOut.addEventListener("click", () => {
