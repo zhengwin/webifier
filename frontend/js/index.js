@@ -27,8 +27,8 @@ function main() {
   dragBtn.addEventListener("click", toolBox.enableDrag);
   let resizeBtn = document.querySelector('#resize-element-button');
   resizeBtn.addEventListener("click", toolBox.enableResize);
-  // let deleteBtn = document.querySelector('#delete-element-button').children[0];
-  // deleteBtn.addEventListener("click", toolBox.enableDelete);
+  let deleteBtn = document.querySelector('#delete-element-button');
+  deleteBtn.addEventListener("click", toolBox.deleteElements);
 
   const insertParagraphButton = document.querySelector("#insert-paragraph-dropdown-item");
   insertParagraphButton.addEventListener('click', function(){ insertElement('paragraph')});
@@ -56,7 +56,14 @@ let toolBox = {
     activeElements.forEach(element => {
       element.enableResize();
     });
+  },
+  deleteElements: () => {
+    for(var element of builderApp.deleteElements){
+      element.Delete();
+    }
+    builderApp.deleteElements = [];
   }
+
 }
 
 
