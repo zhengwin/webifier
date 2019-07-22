@@ -1,5 +1,6 @@
 import { Paragraph } from './Paragraph.js';
 import { Image } from './Image.js';
+import { MediaObject } from './MediaObject.js';
 
 /*  Inserts a HTML tag (elementType) into the main canvas. 
     elementType parameter must be a valid HTML element tag.
@@ -34,6 +35,9 @@ function createElement(elementType) {
         case 'image':
             let img = new Image();
             return img.image;
+        case 'mediaObject':
+            let m = new MediaObject();
+            return m.mediaObject;
         default:
             return document.createElement(elementType)
     }

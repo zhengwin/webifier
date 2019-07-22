@@ -5,8 +5,9 @@ class Image extends Element {
         let image = document.createElement("img");
         image.style.width = "200px";
         image.style.height = "200px";
-        image.id = "inserted-image"
+        image.id = "inserted-image";
         image.src = URL.createObjectURL(event.target.files[0]);
+        console.log(URL.createObjectURL(event.target.files[0]));
         super(image);
         this.image = image;
         console.log(this.image);
