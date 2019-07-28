@@ -1,4 +1,5 @@
 import { Element } from './Element.js';
+import { modalClose, modalEditText } from './Modal.js'
 
 class MediaObject extends Element {
     constructor() {
@@ -24,13 +25,18 @@ class MediaObject extends Element {
         content.className = "media-body";
         content.innerHTML = `
         <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        <p class="element-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
         `;
 
         mediaObject.appendChild(input);
         mediaObject.appendChild(label);
         mediaObject.appendChild(content);
 
+        let text = content.querySelector("p");
+        text.addEventListener("dblclick", () => {
+            // console.log(text);
+            modalEditText(text);
+        });
 
         input.addEventListener("change", function(){
             // console.log(URL.createObjectURL(event.target.files[0]));
@@ -45,3 +51,21 @@ class MediaObject extends Element {
 }
 
 export { MediaObject };
+
+// function() {
+//     let modal = document.querySelector("#exampleModal");
+//     modal.classList.add("show");
+//     modal.style.display = "block";
+//     let textArea = modal.querySelector("textarea");
+//     textArea.innerText = text.innerText;
+
+//     let modalClose = modal.querySelectorAll("button");
+
+//     modalClose.forEach(function(closeBtn) {
+//       closeBtn.addEventListener("click", () => {
+//         text.innerText = textArea.value;
+//         modal.classList.remove("show");
+//         modal.style.display = "none";
+//       });
+//     });
+// }
