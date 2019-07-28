@@ -16,8 +16,8 @@ class Paragraph extends Element{
             this.readyDelete = !this.readyDelete;
 
             if(this.readyDelete){
-                this.newParagraphElement.id = "delete-border";
-                // this.newParagraphElement.className = "testClass";
+                // this.newParagraphElement.id = "delete-border";
+                this.newParagraphElement.className = "testClass";
                 console.log("ELEMENT DETAILS ", this.newParagraphElement);
                 builderApp.deleteElements.push(this);
             }

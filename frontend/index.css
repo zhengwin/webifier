@@ -108,7 +108,7 @@ body {
 
   /* TEST OVERWRITING BORDER STYLE FROM ID SELECTOR -> CLASS SELECTOR */
   .testClass {
-    border: 2px solid red; 
+    border: 2px solid red !important; 
     width: 270px;
     color: green;
   }
