@@ -4,6 +4,9 @@ let builderApp = {
   }
 
 class Element {
+
+    readyDelete = false;
+
     constructor(element) {
         // store functions so they can be referenced later
         this.dragMouseDownHandler = this.dragMouseDown.bind(this);
@@ -18,6 +21,29 @@ class Element {
         this.element.style.position = "absolute";
         this.positions = {pos1: 0, pos2: 0, pos3: 0, pos4: 0};
         builderApp.activeElements.push(this);
+
+        this.element.addEventListener("click", () => {
+          this.readyDelete = !this.readyDelete;
+
+          if(this.readyDelete){
+              // this.newParagraphElement.id = "delete-border";
+              this.element.classList.add("delete-border");
+              console.log("ELEMENT DETAILS ", this.element);
+              builderApp.deleteElements.push(this);
+          }
+          else{
+              for(var i = 0; i < builderApp.deleteElements.length; i++){
+                  if(builderApp.deleteElements[i] == this){
+                      builderApp.deleteElements.splice(i,1);
+                  }
+              }
+              this.element.classList.remove("delete-border");
+          }
+      });
+    }
+
+    Delete() {
+      this.element.remove();
     }
 
     dragMouseDown(e) {
