@@ -39,15 +39,7 @@ function main() {
   const insertMediaObjectButton = document.querySelector("#insert-media-object-item");
   insertMediaObjectButton.addEventListener("click", () => { insertElement('mediaObject')});
 
-  let modal = document.querySelector("#exampleModal");
-  // let modalClose = modal.querySelectorAll("button");
-  
-  // modalClose.forEach(function(closeBtn) {
-  //   closeBtn.addEventListener("click", () => {
-  //     modal.classList.remove("show");
-  //     modal.style.display = "none";
-  //   });
-  // });
+
 //     const insertImageButton = document.querySelector("#insert-hyperlink-dropdown-item");
 //     insertImageButton.addEventListener('click', insertImage('hyperlink'));
 

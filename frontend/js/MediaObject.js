@@ -1,5 +1,4 @@
 import { Element } from './Element.js';
-import { modalClose, modalEditText } from './Modal.js'
 
 class MediaObject extends Element {
     constructor() {
@@ -32,12 +31,15 @@ class MediaObject extends Element {
         mediaObject.appendChild(label);
         mediaObject.appendChild(content);
 
-        let text = content.querySelector("p");
-        text.addEventListener("dblclick", () => {
-            // console.log(text);
-            modalEditText(text);
-        });
+        super(mediaObject);
+        this.mediaObject = mediaObject;
+        this.closeModalHandler = this.closeModal.bind(this);
+        this.editTextHandler = this.editText.bind(this);
 
+        this.text = this.mediaObject.querySelector("p");
+        this.text.addEventListener("dblclick", () => {
+            this.editText(this.closeModalHandler);
+        });
         input.addEventListener("change", function(){
             // console.log(URL.createObjectURL(event.target.files[0]));
             let file = URL.createObjectURL(event.target.files[0]);
@@ -45,9 +47,37 @@ class MediaObject extends Element {
             console.log(label);
             label.style.backgroundImage =  `url(${file})`;
         });
-        super(mediaObject);
-        this.mediaObject = mediaObject;
+
+        // this.text.addEventListener("click", this.testHandler);
     }
+
+    closeModal(e) {
+        let modal = document.querySelector("#exampleModal");
+        let textArea = modal.querySelector("textarea");
+
+        if (e.target.id == "edit-modal-save") {
+            this.text.innerText = textArea.value;
+        }
+        
+        modal.classList.remove("show");
+        modal.style.display = "none";
+        e.target.removeEventListener("click", this.closeModalHandler);
+    }
+
+    editText(closeModalHandler) {
+        let modal = document.querySelector("#exampleModal");
+        modal.classList.add("show");
+        modal.style.display = "block";
+        let textArea = modal.querySelector("textarea");
+        textArea.innerText = this.text.innerText;
+        
+        let modalCloseBtn = modal.querySelectorAll("button");
+
+        modalCloseBtn.forEach( function(closeBtn) {
+            // console.log(this.text);
+            closeBtn.addEventListener("click", closeModalHandler);
+        });
+    }    
 }
 
 export { MediaObject };
