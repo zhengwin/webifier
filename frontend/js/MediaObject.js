@@ -8,7 +8,7 @@ class MediaObject extends Element {
         mediaObject.innerHTML =
         `
         <input type="file"  accept="image/*" name="image" id="media-img" style="display: none;">
-        <label class="media-object-img" for="media-img" style="cursor: pointer;"> Click Me To Change Image</label>
+        <label class="media-object-img" for="media-img"> Click Me To Change Image</label>
         <div class="media-body">
             <h5 class="mt-0">Media Heading</h5>
             <p class="element-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>

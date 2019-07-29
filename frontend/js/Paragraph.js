@@ -11,7 +11,14 @@ class Paragraph extends Element{
         this.textToAdd = textToAdd;
         this.newParagraphElement = newParagraphElement;
         this.newParagraphElement.innerHTML = this.textToAdd;
-        this.newParagraphElement.id = "resize-test2";
+        this.newParagraphElement.classList.add("paragraph");
+        this.newParagraphElement.classList.add("element-text");
+        this.closeModalHandler = this.closeModal.bind(this);
+        this.editTextHandler = this.editText.bind(this);
+
+        this.newParagraphElement.addEventListener("dblclick", () => {
+            this.editText(this.closeModalHandler);
+        });
         newParagraphElement.addEventListener("click", () => {
             this.readyDelete = !this.readyDelete;
 
@@ -35,6 +42,34 @@ class Paragraph extends Element{
     Delete() {
         this.newParagraphElement.remove();
     }
+
+    closeModal(e) {
+        let modal = document.querySelector("#exampleModal");
+        let textArea = modal.querySelector("textarea");
+
+        if (e.target.id == "edit-modal-save") {
+            this.newParagraphElement.innerText = textArea.value;
+        }
+        
+        modal.classList.remove("show");
+        modal.style.display = "none";
+        e.target.removeEventListener("click", this.closeModalHandler);
+    }
+
+    editText(closeModalHandler) {
+        let modal = document.querySelector("#exampleModal");
+        modal.classList.add("show");
+        modal.style.display = "block";
+        let textArea = modal.querySelector("textarea");
+        textArea.innerText = this.newParagraphElement.innerText;
+        
+        let modalCloseBtn = modal.querySelectorAll("button");
+
+        modalCloseBtn.forEach( function(closeBtn) {
+            // console.log(this.text);
+            closeBtn.addEventListener("click", closeModalHandler);
+        });
+    } 
 }
 
 export { Paragraph };

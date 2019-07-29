@@ -12,14 +12,14 @@ function main() {
 
     // make a demo paragraph 
     let testParagraph = document.createElement("div");
-    testParagraph.id = "resize-test2";
+    testParagraph.classList.add("paragraph");
     let p = document.createElement("p");
     p.innerHTML = "Click the button, then hold to drag. To Resize, click the resize button and click bottom right hand corner";
     testParagraph.appendChild(p);
     let mainCanvas = document.querySelector("#main-canvas");
     mainCanvas.appendChild(testParagraph);
 
-    let resizeTest =  new Element(document.querySelector("#resize-test2"));
+    let resizeTest =  new Element(testParagraph);
   });
 
   // Toolbox
