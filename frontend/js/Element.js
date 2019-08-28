@@ -53,7 +53,7 @@ class Element {
       this.positions.pos3 = e.clientX;
       this.positions.pos4 = e.clientY;
       this.element.addEventListener("mouseup", this.closeDragElementHandler);
-      this.element.addEventListener("mousemove", this.elementDragHandler);
+      document.addEventListener("mousemove", this.elementDragHandler);
     }
     
     elementDrag(e) {
@@ -72,7 +72,7 @@ class Element {
     
     closeDragElement() {
       // stop moving when mouse button is released:
-      this.element.removeEventListener("mousemove", this.elementDragHandler);
+      document.removeEventListener("mousemove", this.elementDragHandler);
       this.element.removeEventListener("mouseup", this.closeDragElementHandler);
     }
   
