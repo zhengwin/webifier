@@ -1,8 +1,7 @@
 import { Element, builderApp } from './Element.js';
 
 class Paragraph extends Element{
-    readyDelete = false;
-
+    
     constructor(){
         let textToAdd = prompt("Please enter the text that will be displayed.");
         let newParagraphElement = document.createElement('p');
@@ -41,6 +40,7 @@ class Paragraph extends Element{
 
     Delete() {
         this.newParagraphElement.remove();
+        this.newParagraphElement.id = "resize-test2";
     }
 
     closeModal(e) {
