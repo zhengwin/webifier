@@ -18,24 +18,6 @@ class Paragraph extends Element{
         this.newParagraphElement.addEventListener("dblclick", () => {
             this.editText(this.closeModalHandler);
         });
-        newParagraphElement.addEventListener("click", () => {
-            this.readyDelete = !this.readyDelete;
-
-            if(this.readyDelete){
-                this.newParagraphElement.id = "delete-border";
-                // this.newParagraphElement.className = "testClass";
-                console.log("ELEMENT DETAILS ", this.newParagraphElement);
-                builderApp.deleteElements.push(this);
-            }
-            else{
-                for(var i = 0; i < builderApp.deleteElements.length; i++){
-                    if(builderApp.deleteElements[i] == this){
-                        builderApp.deleteElements.splice(i,1);
-                    }
-                }
-                this.newParagraphElement.id = "resize-test2";
-            }
-        });
     }
 
     Delete() {
