@@ -1,6 +1,7 @@
 let builderApp = {
     activeElements: [],
-    deleteElements: []
+    deleteElements: [],
+    navBar: document.querySelector('#nav-bar')
   }
 
 class Element {
@@ -52,8 +53,8 @@ class Element {
       // get the mouse cursor position at startup:
       this.positions.pos3 = e.clientX;
       this.positions.pos4 = e.clientY;
-      this.element.addEventListener("mouseup", this.closeDragElementHandler);
-      this.element.addEventListener("mousemove", this.elementDragHandler);
+      document.addEventListener("mouseup", this.closeDragElementHandler);
+      document.addEventListener("mousemove", this.elementDragHandler);
     }
     
     elementDrag(e) {
@@ -66,14 +67,26 @@ class Element {
       this.positions.pos4 = e.clientY;
       
       // set the element's new position:
-      this.element.style.top = (this.element.offsetTop - this.positions.pos2) + "px";
-      this.element.style.left = (this.element.offsetLeft - this.positions.pos1) + "px";
+      const offsetTop = (this.element.offsetTop - this.positions.pos2);
+      const offsetLeft = (this.element.offsetLeft - this.positions.pos1);
+
+      // if statements are constraints so that elements cannot be dragged off the canvas
+      if (offsetTop < builderApp.navBar.offsetHeight) {
+        this.element.style.top = builderApp.navBar.offsetHeight + "px"
+      } else {
+        this.element.style.top = offsetTop + "px";
+      }
+      if (offsetLeft < 0) {
+        this.element.style.left = "0px"
+      } else {
+        this.element.style.left = offsetLeft + "px";
+      }
     }
     
     closeDragElement() {
       // stop moving when mouse button is released:
-      this.element.removeEventListener("mousemove", this.elementDragHandler);
-      this.element.removeEventListener("mouseup", this.closeDragElementHandler);
+      document.removeEventListener("mousemove", this.elementDragHandler);
+      document.removeEventListener("mouseup", this.closeDragElementHandler);
     }
   
     enableDrag() {
