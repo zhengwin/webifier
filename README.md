@@ -14,5 +14,7 @@ To checkout the progress of this project, click [here](https://zhengwin.github.i
 
 ### Element Features
 - Dragging Elements
+- Editing text of paragraphs media objects
 - Resizing Elements
 - Deleting Elements
+
